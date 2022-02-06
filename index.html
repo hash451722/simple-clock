@@ -31,12 +31,12 @@
 
       setInterval(() => {
         let day = new Date();
-        let hour = day.getHours() % 12;
-        let minute = day.getMinutes();
-        let second = day.getSeconds();
-        hoursElement.setAttribute("transform", `rotate(${30 * hour})`);
-        minutesElement.setAttribute("transform", `rotate(${6 * minute})`);
-        secondsElement.setAttribute("transform", `rotate(${6 * second})`);
+        let hour = day.getHours() * 30;
+        let minute = day.getMinutes() * 6;
+        let second = day.getSeconds() * 6;
+        hoursElement.setAttribute("transform", `rotate(${hour+minute/12})`);
+        minutesElement.setAttribute("transform", `rotate(${minute})`);
+        secondsElement.setAttribute("transform", `rotate(${second})`);
       });
     });
   </script>
